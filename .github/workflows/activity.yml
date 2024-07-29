@@ -1,0 +1,25 @@
+name: Update Activity
+
+on:
+  schedule:
+    # Runs at midnight UTC every day
+    - cron: '0 0 * * *'
+
+jobs:
+  update_activity:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+
+    - name: Update activity file
+      run: echo "Activity update for $(date)" >> ./content/activity.txt
+
+    - name: Commit changes
+      run: |
+        git config --local user.email "arjunvtsuresh@gmail.com"
+        git config --local user.name "Your GitHub Username"
+        git add ./content/activity.txt
+        git commit -m "Update activity"
+        git push
