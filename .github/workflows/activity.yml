@@ -2,8 +2,8 @@ name: Update Activity
 
 on:
   schedule:
-    # Runs at midnight UTC every day
-    - cron: '5 20 * * *'
+    # Runs at 8 30pm UTC every day
+    - cron: '30 20 * * *'
 
 jobs:
   update_activity:
