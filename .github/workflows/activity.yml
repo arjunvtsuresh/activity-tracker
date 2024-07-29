@@ -3,7 +3,7 @@ name: Update Activity
 on:
   schedule:
     # Runs at midnight UTC every day
-    - cron: '0 1 * * *'
+    - cron: '5 20 * * *'
 
 jobs:
   update_activity:
