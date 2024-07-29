@@ -2,8 +2,8 @@ name: Update Activity
 
 on:
   schedule:
-    # Runs at 8 30pm UTC every day
-    - cron: '30 20 * * *'
+    # Runs at 8:30 PM UTC every day
+    - cron: '40 20 * * *'
 
 jobs:
   update_activity:
@@ -18,8 +18,8 @@ jobs:
 
     - name: Commit changes
       run: |
-        git config --local user.email "arjunvtsuresh@gmail.com"
-        git config --local user.name "Your GitHub Username"
         git add ./content/activity.txt
         git commit -m "Update activity"
         git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
